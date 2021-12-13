@@ -1,6 +1,6 @@
 ## Let's Goo
 
-Willkommen zu diesem Projekt für das Modul 214. Es wird gezeigt wie man Passwörter richtig gespeichert werden. Passwörter sollten als Hash (SHA-256) und gesalted gespeichert werden.
+Willkommen zu diesem Projekt für das Modul 214. Es wird gezeigt wie Passwörter richtig gespeichert werden. Passwörter sollten als Hash (SHA-256) und gesalted gespeichert werden.
 
 > Autoren: <br>
 > Joaquin Kollers, Yannick Basler, Manuel Schumacher
