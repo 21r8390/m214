@@ -5,13 +5,6 @@ Willkommen zu diesem Projekt für das Modul 214. Es wird gezeigt wie Passwörter
 > Autoren: <br>
 > Joaquin Kollers, Yannick Basler, Manuel Schumacher
 
-## Dateistruktur
-
-Es gibt zwei Hauptdateien, welche verwendet werden:
-
-- `App.java`: die Klasse mit dem Main / nimmt Passwort an
-- `Hasher.java`: die Klasse, welche das Passwort hasht und salted
-
 ## Ordnerstruktur
 
 Der Arbeitsbereich enthält standardmäßig zwei Ordner, und zwar:
@@ -20,3 +13,10 @@ Der Arbeitsbereich enthält standardmäßig zwei Ordner, und zwar:
    - `Musterlösung`: der Ordner mit der Musterlösung am Ende
 
 In der Zwischenzeit werden die kompilierten Ausgabedateien standardmässig im Ordner `bin` erzeugt.
+
+## Dateistruktur
+
+Es gibt zwei Hauptdateien, welche verwendet werden:
+
+- `App.java`: die Klasse mit dem Main / nimmt Passwort an
+- `Hasher.java`: die Klasse, welche das Passwort hasht und salted
