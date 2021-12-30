@@ -3,6 +3,7 @@ package Musterlösung;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.Scanner;
 
 /**
  * Dies hier ist die Musterlösung
@@ -114,6 +115,48 @@ public class HasherML {
         }
     }
 
+    /**
+     * Methode, welche Passwörter für schnelles Testen ausgiebt
+     */
+    public static void HashPasswort() {
+        // Erklärungen & Kommentare in den jeweiligen anderen Methoden...
+
+        try {
+            Scanner sc = new Scanner(System.in);
+
+            String[] algs = new String[] { "SHA-1", "SHA-256", "SHA-384", "SHA-512", "MD2", "MD5" };
+
+            System.out.println("\n\nWelchen Algorithmus möchtest du verwenden?");
+            for (int i = 0; i < algs.length; i++) {
+                System.out.println(i + 1 + ". " + algs[i]);
+            }
+            System.out.print("Auswahl: ");
+
+            MessageDigest md = MessageDigest.getInstance(algs[Integer.valueOf(sc.nextLine()) - 1]);
+
+            System.out.print("Sollte das Passwort gesaltet werden? (Y/N): ");
+            byte[] salt = new byte[16];
+            boolean useSalting = sc.nextLine().equalsIgnoreCase("Y");
+            if (useSalting) {
+                SecureRandom random = new SecureRandom();
+                random.nextBytes(salt);
+                md.update(salt);
+            }
+
+            System.out.print("Gebe dein Passwort ein: ");
+            byte[] hashedPasswordBytes = md.digest(sc.nextLine().getBytes());
+
+            System.out.println("\n\nResultat:");
+            System.out.println("Passwort Hash: " + binToHex(hashedPasswordBytes));
+            if (useSalting) {
+                System.out.println("Salt als Hex: " + binToHex(salt));
+            }
+
+            sc.close();
+        } catch (NoSuchAlgorithmException e) {
+            System.out.println("Fehler: Ausgewählter Algorithmus existiert nicht" + e.getMessage());
+        }
+    }
 }
 
 /**
