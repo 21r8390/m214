@@ -40,7 +40,7 @@ public class HasherML {
      * 
      * @param passwort
      */
-    public static void HashPasswortOhneSalt(byte[] passwort) {
+    public static void hashPasswortOhneSalt(byte[] passwort) {
         try {
             // MessageDigests ist eine sichere unidirektionale Hashfunktion, die Daten
             // beliebiger Größe annimmt und einen Hashwert fester Länge ausgiebt.
@@ -71,7 +71,7 @@ public class HasherML {
      * 
      * @param passwort
      */
-    public static void HashPasswortMitSalt(byte[] passwort) {
+    public static void hashPasswortMitSalt(byte[] passwort) {
         try {
             // MessageDigests ist eine sichere unidirektionale Hashfunktion, die Daten
             // beliebiger Größe annimmt und einen Hashwert fester Länge ausgiebt.
